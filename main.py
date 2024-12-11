@@ -4,6 +4,9 @@ import time
 import data
 import threading
 
+import sys
+import sysconfig
+
 seed = 1
 seedRandomWithTime = True
 
@@ -15,15 +18,15 @@ else:
 buyer = True
 seller = False
 
-maxNumberOfTrades = 10000
+maxNumberOfTrades = 10000000
 
-numberOfBuyers = 10
-numberOfSellers = 10
+numberOfBuyers = 1000000
+numberOfSellers = 1000000
 
 maxBuyerValue = 20
 maxSellerValue = 20
 
-numThreads = 1
+numThreads = 10
 agentsPerThread = numberOfBuyers / numThreads
 tradersPerThread = maxNumberOfTrades / numThreads
 
@@ -34,8 +37,8 @@ class Model:
         self.buyers = [Agent(buyer) for i in range(numberOfBuyers)]
         self.sellers = [Agent(seller) for i in range(numberOfSellers)]
     
-        self.priceLock = None
-        self.tradeLock = None
+        self.priceLock = threading.Lock()
+        self.tradeLock = threading.Lock()
         self.TradeData = data.Data()
         self.PriceData = data.Data()
         
@@ -52,38 +55,42 @@ class Model:
         upperBuyerBound = (threadNumber + 1) * agentsPerThread - 1
         lowerSellerBound = threadNumber * agentsPerThread
         upperSellerBound = (threadNumber + 1) * agentsPerThread - 1
-        
+
         for i in range(1, int(tradersPerThread)):
-            # CHECK THIS - int float problems
+   
             buyerIndex = int(rnd.uniform(lowerBuyerBound, upperBuyerBound))
             bidPrice = self.buyers[buyerIndex].FormBidPrice(localRNG)
-        
-        for i in range(1, int(tradersPerThread)):
+
             sellerIndex = int(rnd.uniform(lowerSellerBound, upperSellerBound))
             askPrice = self.sellers[sellerIndex].FormAskPrice(localRNG)
             
-        print(f'Buyer {buyerIndex} bids {bidPrice} and holds {self.buyers[buyerIndex].GetQuantityHeld()} units')
-        print(f'Seller {sellerIndex} asks {askPrice} and has {self.sellers[sellerIndex].GetQuantityHeld()} units in stock')
-       
+            # print(f'Buyer {buyerIndex} bids {bidPrice} and holds {self.buyers[buyerIndex].GetQuantityHeld()} units')
+            # print(f'Seller {sellerIndex} asks {askPrice} and has {self.sellers[sellerIndex].GetQuantityHeld()} units in stock')
         
-        if ((self.buyers[buyerIndex].GetQuantityHeld == 0)
-            and (self.sellers[sellerIndex].GetQuantityHeld() == 1)
-            and bidPrice >= askPrice):
             
-            transactionPrice = localRNG.IntegerInRange(askPrice, bidPrice)
-            self.buyers[buyerIndex].SetPrice(transactionPrice)
-            self.sellers[sellerIndex].SetPrice(transactionPrice)
-            #priceLock.lock()
-            self.PriceData.AddDatum(transactionPrice)
-            #priceLock.unlock()
+            if ((self.buyers[buyerIndex].GetQuantityHeld() == 0)
+                and (self.sellers[sellerIndex].GetQuantityHeld() == 1)
+                and bidPrice >= askPrice):
+                
+                transactionPrice = localRNG.IntegerInRange(askPrice, bidPrice)
+
+                # print(f'{self.buyers[buyerIndex]} accepts contract at {bidPrice}')
+                # print(f'{self.sellers[sellerIndex]} accepts contract at {transactionPrice}')
+
+                self.buyers[buyerIndex].SetPrice(transactionPrice)
+                self.sellers[sellerIndex].SetPrice(transactionPrice)
+                self.priceLock.acquire()
+                self.PriceData.AddDatum(transactionPrice)
+                self.priceLock.release()
+                
+                self.buyers[buyerIndex].SetQuantityHeld(1)
+                self.sellers[sellerIndex].SetQuantityHeld(0)
+                
+                self.tradeLock.acquire()
+                self.TradeData.AddDatum(1)
+                self.tradeLock.release()
             
-            self.buyers[buyerIndex].SetQuantityHeld(1)
-            self.sellers[sellerIndex].SetQuantityHeld(0)
-            
-            #tradeLock.lock()
-            self.TradeData.AddDatum(1)
-            #tradeLock.unlock()
-            
+        # print([buyer.GetPrice() for buyer in self.buyers])
         
     
     def DoTrading(self, deltaTime1, deltaTime2):
@@ -112,8 +119,8 @@ class Model:
 class Agent:
     def __init__(self, agentType):
         self.buyerOrSeller = agentType
-        self.quantityHeld = [0 if buyer else 1]
-        self.value = rnd.uniform(1, maxBuyerValue) if agentType == 'buyer' else rnd.uniform(1, maxSellerValue)
+        self.quantityHeld = 0 if agentType == buyer else 1
+        self.value = rnd.uniform(1, maxBuyerValue) if agentType == buyer else rnd.uniform(1, maxSellerValue)
         self.price = 0
         
     def GetBuyerOrSeller(self):
@@ -138,6 +145,17 @@ class Agent:
         self.price = price
         
 if __name__ == '__main__':
+
+    print(f"Version of python: {sys.version}")
+    active = sysconfig.get_config_vars().get("Py_GIL_DISABLED")
+
+    if active is None:
+        print("GIL cannot be disabled")
+    if active == 0:
+        print("GIL is active")
+    if active == 1:
+        print("GIL is disabled")
+
     wallTime = 0
     CPUtime = 0
     

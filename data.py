@@ -11,11 +11,11 @@ class Data:
         self.sum2 = 0.0
         
     def AddDatum(self, Datuum):
-        N = N + 1
-        if Datuum < min:
-            min = Datuum
-        elif Datuum > max:
-            max = Datuum
+        self.N += 1
+        if Datuum < self.min:
+            self.min = Datuum
+        elif Datuum > self.max:
+            self.max = Datuum
         self.sum1 += Datuum
         self.sum2 += Datuum * Datuum
         

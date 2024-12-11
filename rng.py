@@ -9,6 +9,8 @@ class RandomNumberBenerator:
         self.last = 16807 * (self.last - k   * 127773) - k * 2836
         if self.last < 0:
             self.last += INT_MAX
+
+        return self.last
             
     def IntegerInRange(self, min, max):
         return min + self.LongInteger() % (max - min + 1)
