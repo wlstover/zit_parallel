@@ -6,6 +6,7 @@ import threading
 
 import sys
 import sysconfig
+import logging
 
 seed = 1
 seedRandomWithTime = True
@@ -18,24 +19,17 @@ else:
 buyer = True
 seller = False
 
-maxNumberOfTrades = 10000000
-
-numberOfBuyers = 1000000
-numberOfSellers = 1000000
-
 maxBuyerValue = 20
 maxSellerValue = 20
-
-numThreads = 10
-agentsPerThread = numberOfBuyers / numThreads
-tradersPerThread = maxNumberOfTrades / numThreads
 
 
 class Model:
     
-    def __init__(self, numberOfBuyers, numberOfSellers):
+    def __init__(self, numberOfBuyers, numberOfSellers, numThreads):
+        
         self.buyers = [Agent(buyer) for i in range(numberOfBuyers)]
         self.sellers = [Agent(seller) for i in range(numberOfSellers)]
+        self.numThreads = numThreads
     
         self.priceLock = threading.Lock()
         self.tradeLock = threading.Lock()
@@ -43,20 +37,25 @@ class Model:
         self.PriceData = data.Data()
         
         self.threads = []
+        self.maxNumberOfTrades = 10 * numberOfBuyers
+        
+        self.agentsPerThread = numberOfBuyers / numThreads
+        self.tradersPerThread = self.maxNumberOfTrades / numThreads
+
         
     def DoTrades(self, threadNumber):
         
         localRNG = rng.RandomNumberBenerator(theSeed+threadNumber) 
         
-        if numThreads <= 10:
+        if self.numThreads <= 10:
             print(f'Thread {threadNumber} up and running')
         
-        lowerBuyerBound = threadNumber * agentsPerThread
-        upperBuyerBound = (threadNumber + 1) * agentsPerThread - 1
-        lowerSellerBound = threadNumber * agentsPerThread
-        upperSellerBound = (threadNumber + 1) * agentsPerThread - 1
+        lowerBuyerBound = threadNumber * self.agentsPerThread
+        upperBuyerBound = (threadNumber + 1) * self.agentsPerThread - 1
+        lowerSellerBound = threadNumber * self.agentsPerThread
+        upperSellerBound = (threadNumber + 1) * self.agentsPerThread - 1
 
-        for i in range(1, int(tradersPerThread)):
+        for i in range(1, int(self.tradersPerThread)):
    
             buyerIndex = int(rnd.uniform(lowerBuyerBound, upperBuyerBound))
             bidPrice = self.buyers[buyerIndex].FormBidPrice(localRNG)
@@ -98,7 +97,7 @@ class Model:
         start_time_1 = time.time()
         start_time_2 = time.process_time()
  
-        for i in range(numThreads):
+        for i in range(self.numThreads):
             thread = threading.Thread(target=self.DoTrades, args=(i,))
             self.threads.append(thread)
             thread.start()
@@ -109,12 +108,8 @@ class Model:
         end_time1 = time.time()
         end_time2 = time.process_time()
         
-        delta_time1 = end_time1 - start_time_1
-        delta_time2 = end_time2 - start_time_2
-        
-        print(f"Wall-clock time: {delta_time1:.2f} seconds")
-        print(f"CPU time: {delta_time2:.2f} seconds")
-
+        self.delta_time1 = end_time1 - start_time_1
+        self.delta_time2 = end_time2 - start_time_2
 
 class Agent:
     def __init__(self, agentType):
@@ -161,12 +156,30 @@ if __name__ == '__main__':
     
     print("ZERO INTELLIGENCE TRADERS")
     
-    ZITraders = Model(numberOfBuyers, numberOfSellers)
-    
-    ZITraders.DoTrading(wallTime, CPUtime)
-    
-    # print(f'The model took {wallTime} seconds to execute using {CPUtime/CLOCKS_PER_SEC} seconds on the cores')
-    print(f'Number of trades = {numberOfBuyers + numberOfSellers}')
-    print(f'Quantity traded = {ZITraders.TradeData.GetN()}')
-    print(f'The average price = {ZITraders.PriceData.GetAverage()} and the s.d. is {ZITraders.PriceData.GetStdDev()}')
-    
+    # Configure logging
+    logging.basicConfig(filename='trading_log.csv', level=logging.INFO, format='%(message)s')
+    logging.info('Threads,Buyers,Sellers,WallTime,CPUtime,NumberOfTrades,QuantityTraded,AveragePrice,StdDev')
+
+    for trader_no in [10000, 100000, 1000000]:
+        for i in range(1, 4):
+            numberOfThreads = i
+            numberOfBuyers = trader_no
+            numberOfSellers = trader_no
+                    
+            ZITraders = Model(numberOfBuyers, numberOfSellers, numberOfThreads)
+            ZITraders.DoTrading(wallTime, CPUtime)
+               
+            print(f"Wall-clock time: {ZITraders.delta_time1:.2f} seconds")
+            print(f"CPU time: {ZITraders.delta_time2:.2f} seconds")
+
+            numberOfTrades = numberOfBuyers + numberOfSellers
+            quantityTraded = ZITraders.TradeData.GetN()
+            averagePrice = ZITraders.PriceData.GetAverage()
+            stdDev = ZITraders.PriceData.GetStdDev()
+
+            # Log the results
+            logging.info(f'{numberOfThreads},{numberOfBuyers},{numberOfSellers},{ZITraders.delta_time1:.2f},{ZITraders.delta_time2:.2f},{numberOfTrades},{quantityTraded},{averagePrice},{stdDev}')
+            
+            print(f'Number of trades = {numberOfTrades}')
+            print(f'Quantity traded = {quantityTraded}')
+            print(f'The average price = {averagePrice} and the s.d. is {stdDev}')
