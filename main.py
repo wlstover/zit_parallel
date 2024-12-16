@@ -161,7 +161,7 @@ if __name__ == '__main__':
     logging.info('Threads,Buyers,Sellers,WallTime,CPUtime,NumberOfTrades,QuantityTraded,AveragePrice,StdDev')
 
     for trader_no in [10000, 100000, 1000000]:
-        for i in range(1, 4):
+        for i in range(1, 17):
             numberOfThreads = i
             numberOfBuyers = trader_no
             numberOfSellers = trader_no
