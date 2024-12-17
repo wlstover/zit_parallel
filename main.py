@@ -161,25 +161,26 @@ if __name__ == '__main__':
     logging.info('Threads,Buyers,Sellers,WallTime,CPUtime,NumberOfTrades,QuantityTraded,AveragePrice,StdDev')
 
     for trader_no in [10000, 100000, 1000000]:
-        for i in range(1, 17):
-            numberOfThreads = i
-            numberOfBuyers = trader_no
-            numberOfSellers = trader_no
-                    
-            ZITraders = Model(numberOfBuyers, numberOfSellers, numberOfThreads)
-            ZITraders.DoTrading(wallTime, CPUtime)
-               
-            print(f"Wall-clock time: {ZITraders.delta_time1:.2f} seconds")
-            print(f"CPU time: {ZITraders.delta_time2:.2f} seconds")
+        for i in [1] + list(range(5, 501, 5)):
+            for j in range(1,6):
+                numberOfThreads = i
+                numberOfBuyers = trader_no
+                numberOfSellers = trader_no
+                        
+                ZITraders = Model(numberOfBuyers, numberOfSellers, numberOfThreads)
+                ZITraders.DoTrading(wallTime, CPUtime)
+                
+                print(f"Wall-clock time: {ZITraders.delta_time1:.2f} seconds")
+                print(f"CPU time: {ZITraders.delta_time2:.2f} seconds")
 
-            numberOfTrades = numberOfBuyers + numberOfSellers
-            quantityTraded = ZITraders.TradeData.GetN()
-            averagePrice = ZITraders.PriceData.GetAverage()
-            stdDev = ZITraders.PriceData.GetStdDev()
+                numberOfTrades = numberOfBuyers + numberOfSellers
+                quantityTraded = ZITraders.TradeData.GetN()
+                averagePrice = ZITraders.PriceData.GetAverage()
+                stdDev = ZITraders.PriceData.GetStdDev()
 
-            # Log the results
-            logging.info(f'{numberOfThreads},{numberOfBuyers},{numberOfSellers},{ZITraders.delta_time1:.2f},{ZITraders.delta_time2:.2f},{numberOfTrades},{quantityTraded},{averagePrice},{stdDev}')
-            
-            print(f'Number of trades = {numberOfTrades}')
-            print(f'Quantity traded = {quantityTraded}')
-            print(f'The average price = {averagePrice} and the s.d. is {stdDev}')
+                # Log the results
+                logging.info(f'{numberOfThreads},{numberOfBuyers},{numberOfSellers},{ZITraders.delta_time1:.2f},{ZITraders.delta_time2:.2f},{numberOfTrades},{quantityTraded},{averagePrice},{stdDev}')
+                
+                print(f'Number of trades = {numberOfTrades}')
+                print(f'Quantity traded = {quantityTraded}')
+                print(f'The average price = {averagePrice} and the s.d. is {stdDev}')
