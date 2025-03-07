@@ -1,4 +1,3 @@
-import rng
 import time
 import data
 import threading
@@ -9,6 +8,7 @@ import logging
 
 from libc.stdlib cimport rand, srand, RAND_MAX
 from cython.parallel import prange
+from rng import RandomNumberGenerator
 
 seed = 1
 seedRandomWithTime = True
