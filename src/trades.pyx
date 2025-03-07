@@ -48,7 +48,7 @@ cdef class Model:
     def DoTrades(self, threadNumber):
         cdef int i, buyerIndex, sellerIndex, bidPrice, askPrice, transactionPrice
 
-        localRNG = rng.RandomNumberBenerator(theSeed+threadNumber) 
+        localRNG = rng.RandomNumberGenerator(theSeed+threadNumber) 
         
         # if self.numThreads <= 10:
         #     print(f'Thread {threadNumber} up and running')
@@ -115,7 +115,7 @@ cdef class Model:
         self.delta_time1 = end_time1 - start_time_1
         self.delta_time2 = end_time2 - start_time_2
 
-RNG = rng.RandomNumberBenerator(theSeed)
+RNG = rng.RandomNumberGenerator(theSeed)
 
 cdef class Agent:
     cdef public int quantityHeld, value, price

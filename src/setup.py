@@ -2,5 +2,6 @@ from setuptools import setup
 from Cython.Build import cythonize
 
 setup(
-    ext_modules = cythonize("rng.pyx")
+    name='ZIT Parallel',
+    ext_modules = cythonize(["rng.pyx", "trades.pyx"]),
 )
