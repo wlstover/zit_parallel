@@ -46,7 +46,7 @@ cdef class Model:
 
     
     def DoTrades(self, threadNumber):
-        cdef int i, buyerIndex, sellerIndex, bidPrice, askPrice
+        cdef int i, buyerIndex, sellerIndex, bidPrice, askPrice, transactionPrice
 
         localRNG = rng.RandomNumberBenerator(theSeed+threadNumber) 
         
@@ -76,21 +76,22 @@ cdef class Model:
                 
                 transactionPrice = localRNG.IntegerInRange(askPrice, bidPrice)
 
+                with gil:
                 # print(f'{self.buyers[buyerIndex]} accepts contract at {bidPrice}')
                 # print(f'{self.sellers[sellerIndex]} accepts contract at {transactionPrice}')
-
-                self.buyers[buyerIndex].SetPrice(transactionPrice)
-                self.sellers[sellerIndex].SetPrice(transactionPrice)
-                self.priceLock.acquire()
-                self.PriceData.AddDatum(transactionPrice)
-                self.priceLock.release()
+                    self.buyers[buyerIndex].SetPrice(transactionPrice)
+                    self.sellers[sellerIndex].SetPrice(transactionPrice)
                 
-                self.buyers[buyerIndex].SetQuantityHeld(1)
-                self.sellers[sellerIndex].SetQuantityHeld(0)
-                
-                self.tradeLock.acquire()
-                self.TradeData.AddDatum(1)
-                self.tradeLock.release()
+                    self.priceLock.acquire()
+                    self.PriceData.AddDatum(transactionPrice)
+                    self.priceLock.release()
+                    
+                    self.buyers[buyerIndex].SetQuantityHeld(1)
+                    self.sellers[sellerIndex].SetQuantityHeld(0)
+                    
+                    self.tradeLock.acquire()
+                    self.TradeData.AddDatum(1)
+                    self.tradeLock.release()
             
         # print([buyer.GetPrice() for buyer in self.buyers])
         
