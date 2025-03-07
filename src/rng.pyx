@@ -1,4 +1,4 @@
-from libc.stdint cimport INT_MAX
+INT_MAX = 2147483647
 
 cdef class RandomNumberGenerator:
     cdef long last
