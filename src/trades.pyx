@@ -1,3 +1,4 @@
+# trades.pyx
 import time
 import data
 import threading
@@ -8,7 +9,7 @@ import logging
 
 from libc.stdlib cimport rand, srand, RAND_MAX
 from cython.parallel import prange
-from rng import RandomNumberGenerator
+from rng cimport RandomNumberGenerator
 
 seed = 1
 seedRandomWithTime = True
@@ -47,8 +48,9 @@ cdef class Model:
     
     def DoTrades(self, threadNumber):
         cdef int i, buyerIndex, sellerIndex, bidPrice, askPrice, transactionPrice
+        cdef RandomNumberGenerator localRNG
 
-        localRNG = rng.RandomNumberGenerator(theSeed+threadNumber) 
+        localRNG = RandomNumberGenerator(theSeed+threadNumber) 
         
         # if self.numThreads <= 10:
         #     print(f'Thread {threadNumber} up and running')
@@ -115,7 +117,7 @@ cdef class Model:
         self.delta_time1 = end_time1 - start_time_1
         self.delta_time2 = end_time2 - start_time_2
 
-RNG = rng.RandomNumberGenerator(theSeed)
+RNG = RandomNumberGenerator(theSeed)
 
 cdef class Agent:
     cdef public int quantityHeld, value, price
