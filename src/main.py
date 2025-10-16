@@ -143,14 +143,14 @@ class Agent:
 if __name__ == '__main__':
 
     print(f"Version of python: {sys.version}")
-    active = sysconfig.get_config_vars().get("Py_GIL_DISABLED")
+    # active = sys._is_gil_enabled()
 
-    if active is None:
-        print("GIL cannot be disabled")
-    if active == 0:
-        print("GIL is active")
-    if active == 1:
-        print("GIL is disabled")
+    # if active is None:
+    #     print("GIL cannot be disabled")
+    # if active == 1:
+    #     print("GIL is active")
+    # if active == 0:
+    #     print("GIL is disabled")
 
     wallTime = 0
     CPUtime = 0
@@ -158,10 +158,10 @@ if __name__ == '__main__':
     print("ZERO INTELLIGENCE TRADERS\n")
     
     # Configure logging
-    logging.basicConfig(filename='trading_log.csv', level=logging.INFO, format='%(message)s')
+    logging.basicConfig(filename='trading_log.csv', level=logging.INFO, format='%(message)s', force=True)
     logging.info('Threads,Buyers,Sellers,WallTime,CPUtime,NumberOfTrades,QuantityTraded,AveragePrice,StdDev')
 
-    for trader_no in [10000]:
+    for trader_no in [10000, 100000, 1000000]:
         print(f'Running {trader_no} size market...')
         for i in [1] + list(range(10, 501, 10)):
             # for j in range(1,6):
