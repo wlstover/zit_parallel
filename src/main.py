@@ -161,7 +161,7 @@ if __name__ == '__main__':
     logging.basicConfig(filename='trading_log.csv', level=logging.INFO, format='%(message)s', force=True)
     logging.info('Threads,Buyers,Sellers,WallTime,CPUtime,NumberOfTrades,QuantityTraded,AveragePrice,StdDev')
 
-    for trader_no in [10000, 100000, 1000000]:
+    for trader_no in [10000]:
         print(f'Running {trader_no} size market...')
         for i in [1] + list(range(10, 501, 10)):
             # for j in range(1,6):
