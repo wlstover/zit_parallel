@@ -1,16 +1,17 @@
-from math import sqrt
+from libc.math cimport sqrt
 
-DataVectorSize = 100
+cdef DataVectorSize = 100
 
-class Data:
+cdef class Data:
+
     def __init__(self):
-        self.N = 0 
-        self.min = 1000000.0  # 10^6
+        self.N = 0
+        self.min = 1000000.0
         self.max = 0.0
         self.sum1 = 0.0
         self.sum2 = 0.0
         
-    def AddDatum(self, Datuum):
+    cpdef void AddDatum(self, double Datuum):
         self.N += 1
         if Datuum < self.min:
             self.min = Datuum
@@ -19,25 +20,25 @@ class Data:
         self.sum1 += Datuum
         self.sum2 += Datuum * Datuum
         
-    def GetN(self):
+    cpdef long GetN(self):
         return self.N
     
-    def GetMin(self):
+    cpdef double GetMin(self):
         return self.min
 
-    def GetMax(self):
+    cpdef double GetMax(self):
         return self.max
     
-    def GetDelta(self):
+    cpdef double GetDelta(self):
         return self.max - self.min
     
-    def GetAverage(self):
+    cpdef double GetAverage(self):
         if self.N > 0:
             return self.sum1 / self.N
         else:
             return 0.0
         
-    def GetVariance(self):
+    cpdef double GetVariance(self):
         if self.N > 1:
             avg = self.GetAverage()
             arg = self.sum2 - self.N * avg * avg
@@ -46,33 +47,41 @@ class Data:
         else:
             return 1
         
-    def GetStdDev(self):
+    cpdef double GetStdDev(self):
         return sqrt(self.GetVariance())
 
             
-class DataVector:
+cdef class DataVector:
+
     def __init__(self):
-        self.data = Data[DataVectorSize]
+        cdef int i
+        for i in range(100):
+            self.data[i] = Data()
         
-    def Clear(self):
+    cpdef void Clear(self):
+        cdef int i
         # Initialize data objects
         # TO-DO: Check this is working right
-        for i in range(DataVectorSize):
-            self.data[i].__init__()
+        for i in range(100):
+            self.data[i] = Data()
         
-    def L2StdDev(self):
-        sum1 = 0.0
-        for i in range(DataVectorSize):
+    cpdef double L2StdDev(self):
+        cdef double sum1 = 0.0
+        cdef int i
+
+        for i in range(100):
             sum1 += self.data[i].GetVariance()
         
         return sqrt(sum1)
     
-    def LinfStdDev(self):
-        max = 0.0
+    cpdef double LinfStdDev(self):
+        cdef double max_val = 0.0
+        cdef double var
+        cdef int i 
         
-        for i in range(DataVectorSize):
+        for i in range(100):
             var = self.data[i].GetVariance()
-            if var > max:
-                max = var
+            if var > max_val:
+                max_val = var
                 
-        return sqrt(max)
+        return sqrt(max_val)

@@ -1,0 +1,160 @@
+Function,NCalls,TotTime,PercallTot,CumTime,PercallCum,Filename,Line,FuncName
+C:\Python311\Lib\logging\__init__.py:1156:__init__,1,1.5e-05,1.5e-05,0.0004663,0.0004663,C:\Python311\Lib\logging\__init__.py,1156,__init__
+C:\Python311\Lib\logging\__init__.py:1610:_log,52,0.0002473,4.75576923076923e-06,0.0074153000000000005,0.0001426019230769231,C:\Python311\Lib\logging\__init__.py,1610,_log
+C:\Python311\Lib\logging\__init__.py:576:__init__,1,5.600000000000001e-06,5.600000000000001e-06,2.16e-05,2.16e-05,C:\Python311\Lib\logging\__init__.py,576,__init__
+C:\Python311\Lib\logging\__init__.py:248:_register_at_fork_reinit_lock,1,4.0000000000000003e-07,4.0000000000000003e-07,4.0000000000000003e-07,4.0000000000000003e-07,C:\Python311\Lib\logging\__init__.py,248,_register_at_fork_reinit_lock
+C:\Python311\Lib\logging\__init__.py:1087:flush,53,0.0001307,2.466037735849057e-06,0.0022756,4.2935849056603773e-05,C:\Python311\Lib\logging\__init__.py,1087,flush
+C:\Python311\Lib\logging\__init__.py:998:close,1,3.2000000000000003e-06,3.2000000000000003e-06,6.200000000000001e-06,6.200000000000001e-06,C:\Python311\Lib\logging\__init__.py,998,close
+C:\Python311\Lib\logging\__init__.py:1216:emit,52,8.42e-05,1.6192307692307693e-06,0.0033577000000000004,6.457115384615385e-05,C:\Python311\Lib\logging\__init__.py,1216,emit
+C:\Python311\Lib\logging\__init__.py:1646:addHandler,1,2.7e-06,2.7e-06,4.9000000000000005e-06,4.9000000000000005e-06,C:\Python311\Lib\logging\__init__.py,1646,addHandler
+C:\Python311\Lib\logging\__init__.py:1657:removeHandler,1,4.7e-06,4.7e-06,8.7e-06,8.7e-06,C:\Python311\Lib\logging\__init__.py,1657,removeHandler
+C:\Python311\Lib\encodings\cp1252.py:18:encode,52,8.950000000000001e-05,1.7211538461538464e-06,0.00017680000000000001,3.4000000000000005e-06,C:\Python311\Lib\encodings\cp1252.py,18,encode
+C:\Python311\Lib\encodings\cp1252.py:22:decode,1,3.5000000000000004e-06,3.5000000000000004e-06,1.69e-05,1.69e-05,C:\Python311\Lib\encodings\cp1252.py,22,decode
+C:\Python311\Lib\logging\__init__.py:228:_acquireLock,8,1.5e-05,1.875e-06,1.9e-05,2.375e-06,C:\Python311\Lib\logging\__init__.py,228,_acquireLock
+C:\Python311\Lib\logging\__init__.py:1098:emit,52,0.00013230000000000002,2.5442307692307697e-06,0.0032735000000000004,6.295192307692309e-05,C:\Python311\Lib\logging\__init__.py,1098,emit
+C:\Python311\Lib\logging\__init__.py:447:format,52,2.51e-05,4.826923076923077e-07,0.0001276,2.453846153846154e-06,C:\Python311\Lib\logging\__init__.py,447,format
+C:\Python311\Lib\logging\__init__.py:123:getLevelName,52,5.36e-05,1.0307692307692308e-06,7.450000000000001e-05,1.4326923076923078e-06,C:\Python311\Lib\logging\__init__.py,123,getLevelName
+C:\Python311\Lib\logging\__init__.py:194:_is_internal_frame,208,0.00027390000000000004,1.3168269230769233e-06,0.0009883000000000001,4.751442307692308e-06,C:\Python311\Lib\logging\__init__.py,194,_is_internal_frame
+C:\Python311\Lib\logging\__init__.py:2140:info,52,0.00021390000000000002,4.113461538461539e-06,0.0078861,0.00015165576923076922,C:\Python311\Lib\logging\__init__.py,2140,info
+C:\Python311\Lib\_weakrefset.py:85:add,12751,0.016215200000000003,1.2716806524978436e-06,0.0253787,1.9903301701827306e-06,C:\Python311\Lib\_weakrefset.py,85,add
+C:\Python311\Lib\logging\__init__.py:435:validate,1,5.8e-06,5.8e-06,1.4200000000000001e-05,1.4200000000000001e-05,C:\Python311\Lib\logging\__init__.py,435,validate
+C:\Python311\Lib\logging\__init__.py:815:filter,104,4.3700000000000005e-05,4.201923076923077e-07,4.3700000000000005e-05,4.201923076923077e-07,C:\Python311\Lib\logging\__init__.py,815,filter
+C:\Python311\Lib\logging\__init__.py:845:_removeHandlerRef,1,2.4000000000000003e-06,2.4000000000000003e-06,1.23e-05,1.23e-05,C:\Python311\Lib\logging\__init__.py,845,_removeHandlerRef
+C:\Python311\Lib\logging\__init__.py:965:handle,52,0.0001258,2.4192307692307692e-06,0.0036036,6.93e-05,C:\Python311\Lib\logging\__init__.py,965,handle
+C:\Python311\Lib\_weakrefset.py:39:_remove,12252,0.0040761,3.326885406464251e-07,0.005730900000000001,4.6775220372184136e-07,C:\Python311\Lib\_weakrefset.py,39,_remove
+C:\Python311\Lib\logging\__init__.py:1595:makeRecord,52,0.0001384,2.6615384615384617e-06,0.0019905,3.8278846153846156e-05,C:\Python311\Lib\logging\__init__.py,1595,makeRecord
+C:\Python311\Lib\logging\__init__.py:1415:_clear_cache,1,2.3e-05,2.3e-05,2.83e-05,2.83e-05,C:\Python311\Lib\logging\__init__.py,1415,_clear_cache
+C:\Python311\Lib\logging\__init__.py:1734:isEnabledFor,52,5.05e-05,9.711538461538462e-07,5.380000000000001e-05,1.0346153846153848e-06,C:\Python311\Lib\logging\__init__.py,1734,isEnabledFor
+C:\Python311\Lib\threading.py:1080:join,12751,0.0196516,1.541181083836562e-06,0.3295438,2.584454552584111e-05,C:\Python311\Lib\threading.py,1080,join
+C:\Python311\Lib\threading.py:1118:_wait_for_tstate_lock,12751,0.010487600000000001,8.224923535408989e-07,0.3037608,2.382250803858521e-05,C:\Python311\Lib\threading.py,1118,_wait_for_tstate_lock
+C:\Python311\Lib\logging\__init__.py:432:usesTime,52,5.380000000000001e-05,1.0346153846153848e-06,8.64e-05,1.6615384615384616e-06,C:\Python311\Lib\logging\__init__.py,432,usesTime
+C:\Python311\Lib\logging\__init__.py:1720:getEffectiveLevel,1,6.000000000000001e-07,6.000000000000001e-07,6.000000000000001e-07,6.000000000000001e-07,C:\Python311\Lib\logging\__init__.py,1720,getEffectiveLevel
+C:\Python311\Lib\logging\__init__.py:164:<lambda>,52,5.89e-05,1.1326923076923077e-06,0.0001083,2.0826923076923077e-06,C:\Python311\Lib\logging\__init__.py,164,<lambda>
+C:\Python311\Lib\logging\__init__.py:428:__init__,1,1.8000000000000001e-06,1.8000000000000001e-06,1.8000000000000001e-06,1.8000000000000001e-06,C:\Python311\Lib\logging\__init__.py,428,__init__
+C:\Python311\Lib\logging\__init__.py:652:usesTime,52,6e-05,1.1538461538461538e-06,0.0001464,2.8153846153846156e-06,C:\Python311\Lib\logging\__init__.py,652,usesTime
+C:\Python311\Lib\logging\__init__.py:658:formatMessage,52,3.33e-05,6.403846153846155e-07,0.0001609,3.0942307692307695e-06,C:\Python311\Lib\logging\__init__.py,658,formatMessage
+C:\Python311\Lib\logging\__init__.py:795:__init__,1,2.3e-06,2.3e-06,2.3e-06,2.3e-06,C:\Python311\Lib\logging\__init__.py,795,__init__
+C:\Python311\Lib\logging\__init__.py:983:setFormatter,1,3.0000000000000004e-07,3.0000000000000004e-07,3.0000000000000004e-07,3.0000000000000004e-07,C:\Python311\Lib\logging\__init__.py,983,setFormatter
+C:\Python311\Lib\logging\__init__.py:1319:disable,1,9.000000000000001e-07,9.000000000000001e-07,9.000000000000001e-07,9.000000000000001e-07,C:\Python311\Lib\logging\__init__.py,1319,disable
+C:\Python311\Lib\logging\__init__.py:1076:__init__,1,3.8e-06,3.8e-06,4.86e-05,4.86e-05,C:\Python311\Lib\logging\__init__.py,1076,__init__
+C:\Python311\Lib\logging\__init__.py:1460:setLevel,1,2.9e-06,2.9e-06,3.21e-05,3.21e-05,C:\Python311\Lib\logging\__init__.py,1460,setLevel
+C:\Python311\Lib\logging\__init__.py:1479:info,52,0.0001818,3.4961538461538463e-06,0.0076509,0.0001471326923076923,C:\Python311\Lib\logging\__init__.py,1479,info
+C:\Python311\Lib\logging\__init__.py:237:_releaseLock,8,6.1e-06,7.625e-07,8.000000000000001e-06,1.0000000000000002e-06,C:\Python311\Lib\logging\__init__.py,237,_releaseLock
+C:\Python311\Lib\logging\__init__.py:368:getMessage,52,3.47e-05,6.673076923076923e-07,3.47e-05,6.673076923076923e-07,C:\Python311\Lib\logging\__init__.py,368,getMessage
+C:\Python311\Lib\logging\__init__.py:440:_format,52,0.00010250000000000001,1.9711538461538465e-06,0.00010250000000000001,1.9711538461538465e-06,C:\Python311\Lib\logging\__init__.py,440,_format
+C:\Python311\Lib\logging\__init__.py:912:createLock,1,5.8e-06,5.8e-06,1.5e-05,1.5e-05,C:\Python311\Lib\logging\__init__.py,912,createLock
+C:\Python311\Lib\logging\__init__.py:922:acquire,106,8.970000000000001e-05,8.462264150943397e-07,0.00011690000000000001,1.1028301886792453e-06,C:\Python311\Lib\logging\__init__.py,922,acquire
+C:\Python311\Lib\logging\__init__.py:929:release,106,5.67e-05,5.349056603773585e-07,7.060000000000001e-05,6.660377358490567e-07,C:\Python311\Lib\logging\__init__.py,929,release
+C:\Python311\Lib\logging\__init__.py:942:format,52,7.890000000000001e-05,1.5173076923076924e-06,0.0005443000000000001,1.0467307692307693e-05,C:\Python311\Lib\logging\__init__.py,942,format
+C:\Python311\Lib\logging\__init__.py:1207:_open,1,1.7e-06,1.7e-06,0.0003839,0.0003839,C:\Python311\Lib\logging\__init__.py,1207,_open
+C:\Python311\Lib\logging\__init__.py:202:_checkLevel,2,2.9e-06,1.45e-06,3.8e-06,1.9e-06,C:\Python311\Lib\logging\__init__.py,202,_checkLevel
+C:\Python311\Lib\logging\__init__.py:863:_addHandlerRef,1,1.1200000000000001e-05,1.1200000000000001e-05,1.62e-05,1.62e-05,C:\Python311\Lib\logging\__init__.py,863,_addHandlerRef
+C:\Python311\Lib\logging\__init__.py:882:__init__,1,8.400000000000001e-06,8.400000000000001e-06,4.4800000000000005e-05,4.4800000000000005e-05,C:\Python311\Lib\logging\__init__.py,882,__init__
+C:\Python311\Lib\logging\__init__.py:1636:handle,52,7.500000000000001e-05,1.4423076923076924e-06,0.0038405,7.385576923076923e-05,C:\Python311\Lib\logging\__init__.py,1636,handle
+C:\Python311\Lib\threading.py:279:_is_owned,12751,0.005247,4.114971374794134e-07,0.0096916,7.60065877186103e-07,C:\Python311\Lib\threading.py,279,_is_owned
+C:\Python311\Lib\threading.py:1446:current_thread,25554,0.0148862,5.825389371526963e-07,0.0188995,7.395906707364796e-07,C:\Python311\Lib\threading.py,1446,current_thread
+C:\Python311\Lib\threading.py:568:is_set,25502,0.0036681,1.4383577758607168e-07,0.0036681,1.4383577758607168e-07,C:\Python311\Lib\threading.py,568,is_set
+C:\Python311\Lib\logging\__init__.py:1953:basicConfig,1,8.570000000000001e-05,8.570000000000001e-05,0.0008875,0.0008875,C:\Python311\Lib\logging\__init__.py,1953,basicConfig
+C:\Python311\Lib\logging\__init__.py:292:__init__,52,0.0006461,1.2425e-05,0.0018521000000000002,3.5617307692307696e-05,C:\Python311\Lib\logging\__init__.py,292,__init__
+C:\Python311\Lib\logging\__init__.py:1183:close,1,1.3300000000000001e-05,1.3300000000000001e-05,0.0002399,0.0002399,C:\Python311\Lib\logging\__init__.py,1183,close
+C:\Python311\Lib\logging\__init__.py:1561:findCaller,52,0.00024040000000000002,4.623076923076923e-06,0.001337,2.5711538461538465e-05,C:\Python311\Lib\logging\__init__.py,1561,findCaller
+C:\Python311\Lib\logging\__init__.py:1690:callHandlers,52,0.0001339,2.575e-06,0.0037375000000000004,7.187500000000001e-05,C:\Python311\Lib\logging\__init__.py,1690,callHandlers
+C:\Python311\Lib\logging\__init__.py:674:format,52,0.00012340000000000002,2.3730769230769233e-06,0.00046540000000000004,8.95e-06,C:\Python311\Lib\logging\__init__.py,674,format
+C:\Python311\Lib\threading.py:849:__init__,12751,0.080515,6.314406713198965e-06,0.2825454,2.21586855932868e-05,C:\Python311\Lib\threading.py,849,__init__
+C:\Python311\Lib\threading.py:288:wait,12751,0.0536482,4.207371970825818e-06,15.6194787,0.0012249610775625442,C:\Python311\Lib\threading.py,288,wait
+C:\Python311\Lib\threading.py:938:start,12751,0.0358823,2.8140773272684496e-06,16.1199692,0.0012642121559093404,C:\Python311\Lib\threading.py,938,start
+C:\Python311\Lib\threading.py:90:RLock,1,8.8e-06,8.8e-06,8.8e-06,8.8e-06,C:\Python311\Lib\threading.py,90,RLock
+C:\Python311\Lib\threading.py:832:<listcomp>,12751,0.0074819000000000005,5.86769665124304e-07,0.0096355,7.556662222570779e-07,C:\Python311\Lib\threading.py,832,<listcomp>
+C:\Python311\Lib\threading.py:604:wait,12751,0.0566438,4.442302564504745e-06,15.6977112,0.0012310964787075524,C:\Python311\Lib\threading.py,604,wait
+C:\Python311\Lib\threading.py:236:__init__,12751,0.069897,5.481687710767783e-06,0.069897,5.481687710767783e-06,C:\Python311\Lib\threading.py,236,__init__
+C:\Python311\Lib\threading.py:822:_maintain_shutdown_locks,12751,0.0070632,5.539330248607953e-07,0.0185524,1.4549760803074269e-06,C:\Python311\Lib\threading.py,822,_maintain_shutdown_locks
+C:\Python311\Lib\threading.py:267:__exit__,12751,0.010196400000000001,7.996549290251746e-07,0.0125579,9.848560897184535e-07,C:\Python311\Lib\threading.py,267,__exit__
+C:\Python311\Lib\threading.py:804:_newname,12751,0.0204961,1.6074111834365933e-06,0.0204961,1.6074111834365933e-06,C:\Python311\Lib\threading.py,804,_newname
+C:\Python311\Lib\threading.py:264:__enter__,12751,0.0060092,4.712728413457768e-07,0.0090308,7.082424907850365e-07,C:\Python311\Lib\threading.py,264,__enter__
+C:\Python311\Lib\threading.py:273:_release_save,12751,0.004661800000000001,3.656026978276214e-07,0.0062766,4.922437455885813e-07,C:\Python311\Lib\threading.py,273,_release_save
+C:\Python311\Lib\threading.py:276:_acquire_restore,12751,0.012279600000000002,9.630303505607404e-07,0.0174248,1.3665438004862363e-06,C:\Python311\Lib\threading.py,276,_acquire_restore
+C:\Python311\Lib\threading.py:1145:name,52,2.7400000000000002e-05,5.26923076923077e-07,2.7400000000000002e-05,5.26923076923077e-07,C:\Python311\Lib\threading.py,1145,name
+C:\Python311\Lib\threading.py:1199:daemon,25502,0.0061837,2.4247902125323504e-07,0.0061837,2.4247902125323504e-07,C:\Python311\Lib\threading.py,1199,daemon
+C:\Python311\Lib\threading.py:555:__init__,12751,0.014730100000000001,1.1552113559720808e-06,0.123605,9.693749509842366e-06,C:\Python311\Lib\threading.py,555,__init__
+C:\Python311\Lib\threading.py:1044:_stop,12751,0.014033700000000001,1.1005960316837896e-06,0.0365911,2.8696651243039763e-06,C:\Python311\Lib\threading.py,1044,_stop
+C:\Python311\Lib\threading.py:1317:_make_invoke_excepthook,12751,0.013699600000000001,1.0743941651635167e-06,0.013699600000000001,1.0743941651635167e-06,C:\Python311\Lib\threading.py,1317,_make_invoke_excepthook
+<string>:1:<module>,1,6.120000000000001e-05,6.120000000000001e-05,18.8505405,18.8505405,<string>,1,<module>
+C:\Users\walte\AppData\Roaming\Python\Python311\site-packages\IPython\core\interactiveshell.py:277:_modified_open,1,2.4000000000000003e-06,2.4000000000000003e-06,0.00013580000000000002,0.00013580000000000002,C:\Users\walte\AppData\Roaming\Python\Python311\site-packages\IPython\core\interactiveshell.py,277,_modified_open
+<string>:27:__init__,51,0.0007764,1.5223529411764707e-05,2.0079322,0.039371219607843136,<string>,27,__init__
+<string>:30:<listcomp>,51,0.14267760000000002,0.0027976000000000003,1.0114625000000002,0.01983259803921569,<string>,30,<listcomp>
+<string>:29:<listcomp>,51,0.1463164,0.0028689490196078435,0.9952099000000001,0.019513919607843138,<string>,29,<listcomp>
+<string>:116:__init__,1020000,0.45209980000000005,4.432350980392157e-07,1.7176784,1.683998431372549e-06,<string>,116,__init__
+C:\Programming\papers\zi_paper\zit_parallel\src\rng.py:8:LongInteger,1020000,0.6249942,6.127394117647059e-07,0.6249942,6.127394117647059e-07,C:\Programming\papers\zi_paper\zit_parallel\src\rng.py,8,LongInteger
+C:\Programming\papers\zi_paper\zit_parallel\src\data.py:40:GetVariance,51,7.75e-05,1.519607843137255e-06,9.15e-05,1.7941176470588235e-06,C:\Programming\papers\zi_paper\zit_parallel\src\data.py,40,GetVariance
+<string>:94:DoTrading,51,0.051871400000000005,0.001017086274509804,16.787013,0.32915711764705885,<string>,94,DoTrading
+C:\Programming\papers\zi_paper\zit_parallel\src\rng.py:16:IntegerInRange,1020000,0.6405769,6.28016568627451e-07,1.2655786,1.2407633333333334e-06,C:\Programming\papers\zi_paper\zit_parallel\src\rng.py,16,IntegerInRange
+C:\Programming\papers\zi_paper\zit_parallel\src\data.py:34:GetAverage,102,7.010000000000001e-05,6.872549019607844e-07,7.010000000000001e-05,6.872549019607844e-07,C:\Programming\papers\zi_paper\zit_parallel\src\data.py,34,GetAverage
+<string>:115:Agent,1,1.4000000000000001e-06,1.4000000000000001e-06,1.4000000000000001e-06,1.4000000000000001e-06,<string>,115,Agent
+C:\Programming\papers\zi_paper\zit_parallel\src\data.py:49:GetStdDev,51,8.09e-05,1.5862745098039216e-06,0.00020480000000000002,4.015686274509804e-06,C:\Programming\papers\zi_paper\zit_parallel\src\data.py,49,GetStdDev
+C:\Programming\papers\zi_paper\zit_parallel\src\data.py:6:__init__,102,8.65e-05,8.480392156862745e-07,8.65e-05,8.480392156862745e-07,C:\Programming\papers\zi_paper\zit_parallel\src\data.py,6,__init__
+<string>:25:Model,1,7.000000000000001e-07,7.000000000000001e-07,7.000000000000001e-07,7.000000000000001e-07,<string>,25,Model
+C:\Programming\papers\zi_paper\zit_parallel\src\rng.py:5:__init__,1,6.000000000000001e-07,6.000000000000001e-07,6.000000000000001e-07,6.000000000000001e-07,C:\Programming\papers\zi_paper\zit_parallel\src\rng.py,5,__init__
+C:\Programming\papers\zi_paper\zit_parallel\src\data.py:22:GetN,51,2.05e-05,4.019607843137255e-07,2.05e-05,4.019607843137255e-07,C:\Programming\papers\zi_paper\zit_parallel\src\data.py,22,GetN
+<frozen ntpath>:154:splitdrive,52,0.0001941,3.7326923076923076e-06,0.0002141,4.117307692307692e-06,<frozen ntpath>,154,splitdrive
+<frozen codecs>:260:__init__,1,1.0000000000000002e-06,1.0000000000000002e-06,1.0000000000000002e-06,1.0000000000000002e-06,<frozen codecs>,260,__init__
+<frozen ntpath>:231:splitext,52,0.00010580000000000001,2.034615384615385e-06,0.0003209,6.171153846153846e-06,<frozen ntpath>,231,splitext
+<frozen ntpath>:35:_get_bothseps,52,3.5000000000000004e-05,6.730769230769232e-07,4.02e-05,7.730769230769231e-07,<frozen ntpath>,35,_get_bothseps
+<frozen genericpath>:121:_splitext,52,0.00010070000000000001,1.936538461538462e-06,0.0002056,3.953846153846154e-06,<frozen genericpath>,121,_splitext
+<frozen ntpath>:242:basename,52,5.9300000000000005e-05,1.1403846153846155e-06,0.0006449,1.2401923076923077e-05,<frozen ntpath>,242,basename
+<frozen ntpath>:570:abspath,1,3.4e-06,3.4e-06,1.81e-05,1.81e-05,<frozen ntpath>,570,abspath
+<frozen ntpath>:538:normpath,1,5.500000000000001e-06,5.500000000000001e-06,7.8e-06,7.8e-06,<frozen ntpath>,538,normpath
+<frozen ntpath>:51:normcase,208,0.000304,1.4615384615384616e-06,0.0007144,3.4346153846153847e-06,<frozen ntpath>,51,normcase
+<frozen ntpath>:208:split,52,0.0002948,5.669230769230769e-06,0.0005856,1.1261538461538462e-05,<frozen ntpath>,208,split
+<frozen codecs>:186:__init__,1,3.3e-06,3.3e-06,3.3e-06,3.3e-06,<frozen codecs>,186,__init__
+<frozen codecs>:214:setstate,1,1.3e-06,1.3e-06,1.3e-06,1.3e-06,<frozen codecs>,214,setstate
+~:0:<built-in method _codecs.charmap_encode>,52,8.730000000000001e-05,1.678846153846154e-06,8.730000000000001e-05,1.678846153846154e-06,~,0,<built-in method _codecs.charmap_encode>
+~:0:<built-in method _codecs.charmap_decode>,1,1.34e-05,1.34e-05,1.34e-05,1.34e-05,~,0,<built-in method _codecs.charmap_decode>
+~:0:<method 'append' of 'collections.deque' objects>,12751,0.0017374,1.3625597992314328e-07,0.0017374,1.3625597992314328e-07,~,0,<method 'append' of 'collections.deque' objects>
+~:0:<method 'search' of 're.Pattern' objects>,1,8.400000000000001e-06,8.400000000000001e-06,8.400000000000001e-06,8.400000000000001e-06,~,0,<method 'search' of 're.Pattern' objects>
+~:0:<built-in method math.sqrt>,51,3.24e-05,6.352941176470589e-07,3.24e-05,6.352941176470589e-07,~,0,<built-in method math.sqrt>
+~:0:<built-in method nt.getpid>,52,2.44e-05,4.692307692307692e-07,2.44e-05,4.692307692307692e-07,~,0,<built-in method nt.getpid>
+~:0:<built-in method nt._getfullpathname>,1,6.900000000000001e-06,6.900000000000001e-06,6.900000000000001e-06,6.900000000000001e-06,~,0,<built-in method nt._getfullpathname>
+~:0:<built-in method nt._path_normpath>,1,1.3e-06,1.3e-06,1.3e-06,1.3e-06,~,0,<built-in method nt._path_normpath>
+~:0:<built-in method nt.fspath>,366,6.14e-05,1.6775956284153005e-07,6.14e-05,1.6775956284153005e-07,~,0,<built-in method nt.fspath>
+~:0:<method 'acquire' of '_thread.lock' objects>,63755,15.7823816,0.00024754735471727707,15.7823816,0.00024754735471727707,~,0,<method 'acquire' of '_thread.lock' objects>
+~:0:<method 'release' of '_thread.lock' objects>,25502,0.0028432,1.1148929495725827e-07,0.0028432,1.1148929495725827e-07,~,0,<method 'release' of '_thread.lock' objects>
+~:0:<method 'locked' of '_thread.lock' objects>,51103,0.0029754,5.8223587656301976e-08,0.0029754,5.8223587656301976e-08,~,0,<method 'locked' of '_thread.lock' objects>
+~:0:<method '__enter__' of '_thread.lock' objects>,12751,0.0030216,2.3696964943925967e-07,0.0030216,2.3696964943925967e-07,~,0,<method '__enter__' of '_thread.lock' objects>
+~:0:<method '__exit__' of '_thread.lock' objects>,25502,0.0036489,1.4308289545917969e-07,0.0036489,1.4308289545917969e-07,~,0,<method '__exit__' of '_thread.lock' objects>
+~:0:<method 'acquire' of '_thread.RLock' objects>,114,3.12e-05,2.736842105263158e-07,3.12e-05,2.736842105263158e-07,~,0,<method 'acquire' of '_thread.RLock' objects>
+~:0:<method 'release' of '_thread.RLock' objects>,114,1.58e-05,1.385964912280702e-07,1.58e-05,1.385964912280702e-07,~,0,<method 'release' of '_thread.RLock' objects>
+~:0:<method '__exit__' of '_thread.RLock' objects>,12751,0.0026278,2.0608579719237708e-07,0.0026278,2.0608579719237708e-07,~,0,<method '__exit__' of '_thread.RLock' objects>
+~:0:<built-in method _thread.start_new_thread>,12751,0.3819035,2.9950866598698142e-05,0.3819035,2.9950866598698142e-05,~,0,<built-in method _thread.start_new_thread>
+~:0:<built-in method _thread.allocate_lock>,25604,0.0527368,2.059709420403062e-06,0.0527368,2.059709420403062e-06,~,0,<built-in method _thread.allocate_lock>
+~:0:<built-in method _thread.get_ident>,25606,0.0040203,1.5700617042880575e-07,0.0040203,1.5700617042880575e-07,~,0,<built-in method _thread.get_ident>
+~:0:<built-in method time.time>,155,9.7e-05,6.258064516129032e-07,9.7e-05,6.258064516129032e-07,~,0,<built-in method time.time>
+~:0:<built-in method time.process_time>,102,0.0002858,2.8019607843137254e-06,0.0002858,2.8019607843137254e-06,~,0,<built-in method time.process_time>
+~:0:<method 'write' of '_io.TextIOWrapper' objects>,52,0.0001549,2.978846153846154e-06,0.00033170000000000004,6.378846153846154e-06,~,0,<method 'write' of '_io.TextIOWrapper' objects>
+~:0:<method 'read' of '_io.TextIOWrapper' objects>,1,8.55e-05,8.55e-05,0.00010240000000000001,0.00010240000000000001,~,0,<method 'read' of '_io.TextIOWrapper' objects>
+~:0:<method 'flush' of '_io.TextIOWrapper' objects>,53,0.0020427,3.854150943396227e-05,0.0020427,3.854150943396227e-05,~,0,<method 'flush' of '_io.TextIOWrapper' objects>
+~:0:<method 'close' of '_io.TextIOWrapper' objects>,1,0.0002064,0.0002064,0.0002064,0.0002064,~,0,<method 'close' of '_io.TextIOWrapper' objects>
+~:0:<built-in method io.open>,2,0.00051,0.000255,0.0005156000000000001,0.00025780000000000003,~,0,<built-in method io.open>
+~:0:<built-in method io.text_encoding>,2,7.000000000000001e-07,3.5000000000000004e-07,7.000000000000001e-07,3.5000000000000004e-07,~,0,<built-in method io.text_encoding>
+~:0:<built-in method _winapi.LCMapStringEx>,208,0.00025,1.201923076923077e-06,0.00025,1.201923076923077e-06,~,0,<built-in method _winapi.LCMapStringEx>
+~:0:<method 'get' of 'dict' objects>,104,5.9600000000000005e-05,5.730769230769231e-07,5.9600000000000005e-05,5.730769230769231e-07,~,0,<method 'get' of 'dict' objects>
+~:0:<method 'pop' of 'dict' objects>,10,4.4e-06,4.4e-07,4.4e-06,4.4e-07,~,0,<method 'pop' of 'dict' objects>
+~:0:<method 'values' of 'dict' objects>,1,3.0000000000000004e-07,3.0000000000000004e-07,3.0000000000000004e-07,3.0000000000000004e-07,~,0,<method 'values' of 'dict' objects>
+~:0:<method 'clear' of 'dict' objects>,9,1.7e-06,1.888888888888889e-07,1.7e-06,1.888888888888889e-07,~,0,<method 'clear' of 'dict' objects>
+~:0:<method 'append' of 'list' objects>,12753,0.0027111,2.1258527405316398e-07,0.0027111,2.1258527405316398e-07,~,0,<method 'append' of 'list' objects>
+~:0:<method 'remove' of 'list' objects>,2,9.100000000000001e-06,4.5500000000000005e-06,9.100000000000001e-06,4.5500000000000005e-06,~,0,<method 'remove' of 'list' objects>
+~:0:<method 'add' of 'set' objects>,12751,0.0091635,7.186495176848875e-07,0.0091635,7.186495176848875e-07,~,0,<method 'add' of 'set' objects>
+~:0:<method 'discard' of 'set' objects>,12252,0.0016548,1.3506366307541626e-07,0.0016548,1.3506366307541626e-07,~,0,<method 'discard' of 'set' objects>
+~:0:<method 'difference_update' of 'set' objects>,12751,0.0018537,1.4537683318955377e-07,0.0018537,1.4537683318955377e-07,~,0,<method 'difference_update' of 'set' objects>
+~:0:<method 'replace' of 'str' objects>,260,5.84e-05,2.2461538461538462e-07,5.84e-05,2.2461538461538462e-07,~,0,<method 'replace' of 'str' objects>
+~:0:<method 'find' of 'str' objects>,52,3.26e-05,6.26923076923077e-07,3.26e-05,6.26923076923077e-07,~,0,<method 'find' of 'str' objects>
+~:0:<method 'rfind' of 'str' objects>,156,6.450000000000001e-05,4.1346153846153853e-07,6.450000000000001e-05,4.1346153846153853e-07,~,0,<method 'rfind' of 'str' objects>
+~:0:<method 'rstrip' of 'str' objects>,52,2.6300000000000002e-05,5.057692307692308e-07,2.6300000000000002e-05,5.057692307692308e-07,~,0,<method 'rstrip' of 'str' objects>
+~:0:<built-in method builtins.__build_class__>,2,2.29e-05,1.145e-05,2.5e-05,1.25e-05,~,0,<built-in method builtins.__build_class__>
+~:0:<built-in method builtins.exec>,2,0.0011293,0.00056465,18.850565200000002,9.425282600000001,~,0,<built-in method builtins.exec>
+~:0:<built-in method builtins.hasattr>,106,5.31e-05,5.009433962264151e-07,5.31e-05,5.009433962264151e-07,~,0,<built-in method builtins.hasattr>
+~:0:<built-in method builtins.isinstance>,379,7.94e-05,2.0949868073878629e-07,7.94e-05,2.0949868073878629e-07,~,0,<built-in method builtins.isinstance>
+~:0:<built-in method builtins.len>,157,3.27e-05,2.0828025477707007e-07,3.27e-05,2.0828025477707007e-07,~,0,<built-in method builtins.len>
+~:0:<built-in method builtins.max>,52,4.04e-05,7.769230769230769e-07,4.04e-05,7.769230769230769e-07,~,0,<built-in method builtins.max>
+~:0:<built-in method builtins.print>,5,0.0008441000000000001,0.00016882000000000003,0.0008441000000000001,0.00016882000000000003,~,0,<built-in method builtins.print>
+~:0:<built-in method sys._getframe>,52,4.94e-05,9.5e-07,4.94e-05,9.5e-07,~,0,<built-in method sys._getframe>
+~:0:<method 'disable' of '_lsprof.Profiler' objects>,1,6.000000000000001e-07,6.000000000000001e-07,6.000000000000001e-07,6.000000000000001e-07,~,0,<method 'disable' of '_lsprof.Profiler' objects>

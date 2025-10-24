@@ -1,11 +1,12 @@
-import rng
+# main.pyx
+from data cimport Data, DataVector
 import time
-import data
 import threading
-
-import sys
-import sysconfig
+from rng cimport RandomNumberGenerator
+import rng
 import logging
+
+cdef RandomNumberGenerator RNG 
 
 seed = 1
 seedRandomWithTime = True
@@ -15,6 +16,8 @@ if seedRandomWithTime:
 else:
     theSeed = seed
 
+RNG = rng.RandomNumberGenerator(theSeed)
+
 buyer = True
 seller = False
 
@@ -22,7 +25,23 @@ maxBuyerValue = 20
 maxSellerValue = 20
 
 
-class Model:
+cdef class Model:
+
+    cdef public int numberOfBuyers
+    cdef public int numberOfSellers
+    cdef public int numThreads
+    cdef public int agentsPerThread
+    cdef public int tradersPerThread
+    cdef public int maxNumberOfTrades
+    cdef public list buyers
+    cdef public list sellers
+    cdef public object priceLock
+    cdef public object tradeLock
+    cdef public Data PriceData
+    cdef public Data TradeData
+    cdef public double delta_time1
+    cdef public double delta_time2
+    cdef public list threads
     
     def __init__(self, numberOfBuyers, numberOfSellers, numThreads):
         
@@ -32,8 +51,8 @@ class Model:
     
         self.priceLock = threading.Lock()
         self.tradeLock = threading.Lock()
-        self.TradeData = data.Data()
-        self.PriceData = data.Data()
+        self.TradeData = Data()
+        self.PriceData = Data()
         
         self.threads = []
         self.maxNumberOfTrades = 10 * numberOfBuyers
@@ -44,7 +63,12 @@ class Model:
         
     def DoTrades(self, threadNumber):
         
-        localRNG = rng.RandomNumberBenerator(theSeed+threadNumber) 
+        cdef RandomNumberGenerator localRNG
+        localRNG = rng.RandomNumberGenerator(theSeed+threadNumber)
+        
+        cdef long buyerIndex, sellerIndex, bidPrice, askPrice, transactionPrice
+        cdef long lowerBuyerBound, upperBuyerBound, lowerSellerBound, upperSellerBound
+        cdef int i
         
         # if self.numThreads <= 10:
         #     print(f'Thread {threadNumber} up and running')
@@ -110,9 +134,15 @@ class Model:
         self.delta_time1 = end_time1 - start_time_1
         self.delta_time2 = end_time2 - start_time_2
 
-RNG = rng.RandomNumberBenerator(theSeed)
 
-class Agent:
+cdef class Agent:
+
+    cdef public int index
+    cdef public int quantityHeld
+    cdef public double price
+    cdef public double value 
+    cdef public bint buyerOrSeller
+
     def __init__(self, agentType):
         self.buyerOrSeller = agentType
         self.quantityHeld = 0 if agentType == buyer else 1
@@ -139,10 +169,8 @@ class Agent:
         
     def SetPrice(self, price):
         self.price = price
-        
-if __name__ == '__main__':
 
-    print(f"Version of python: {sys.version}")
+def run_model():
     # active = sys._is_gil_enabled()
 
     # if active is None:
@@ -161,7 +189,7 @@ if __name__ == '__main__':
     logging.basicConfig(filename='trading_log.csv', level=logging.INFO, format='%(message)s', force=True)
     logging.info('Threads,Buyers,Sellers,WallTime,CPUtime,NumberOfTrades,QuantityTraded,AveragePrice,StdDev')
 
-    for trader_no in [10000]:
+    for trader_no in [10000, 100000, 1000000]:
         print(f'Running {trader_no} size market...')
         for i in [1] + list(range(10, 501, 10)):
             # for j in range(1,6):
@@ -190,3 +218,6 @@ if __name__ == '__main__':
             # print(f'The average price = {averagePrice} and the s.d. is {stdDev}')
     
     print(f'ZIT MODEL COMPLETE')
+        
+if __name__ == '__main__':
+    run_model()
