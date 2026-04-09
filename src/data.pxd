@@ -3,7 +3,7 @@ cdef class Data:
     cdef public double min
     cdef public double max 
     cdef public double sum1
-    cdef public sum2
+    cdef public double sum2
 
     cpdef void AddDatum(self, double Datum)
     cpdef long GetN(self)

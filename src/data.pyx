@@ -15,7 +15,7 @@ cdef class Data:
         self.N += 1
         if Datuum < self.min:
             self.min = Datuum
-        elif Datuum > self.max:
+        if Datuum > self.max:
             self.max = Datuum
         self.sum1 += Datuum
         self.sum2 += Datuum * Datuum
