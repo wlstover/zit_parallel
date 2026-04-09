@@ -77,16 +77,14 @@ class Model:
 
                 self.buyers[buyerIndex].SetPrice(transactionPrice)
                 self.sellers[sellerIndex].SetPrice(transactionPrice)
-                self.priceLock.acquire()
-                self.PriceData.AddDatum(transactionPrice)
-                self.priceLock.release()
+                with self.priceLock:
+                    self.PriceData.AddDatum(transactionPrice)
                 
                 self.buyers[buyerIndex].SetQuantityHeld(1)
                 self.sellers[sellerIndex].SetQuantityHeld(0)
                 
-                self.tradeLock.acquire()
-                self.TradeData.AddDatum(1)
-                self.tradeLock.release()
+                with self.tradeLock:
+                    self.TradeData.AddDatum(1)
             
         # print([buyer.GetPrice() for buyer in self.buyers])
         
