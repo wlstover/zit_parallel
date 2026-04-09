@@ -1,4 +1,5 @@
 # rng.pyx
+# cython: freethreading_compatible=True
 cdef long INT_MAX = 2147483647
 
 cdef class RandomNumberGenerator:

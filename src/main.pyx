@@ -1,4 +1,6 @@
 # main.pyx
+# cython: freethreading_compatible=True
+
 from data cimport Data, DataVector
 import time
 import threading

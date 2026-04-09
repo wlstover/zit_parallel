@@ -1,3 +1,4 @@
+# cython: freethreading_compatible=True
 from libc.math cimport sqrt
 
 cdef DataVectorSize = 100
